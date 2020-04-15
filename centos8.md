@@ -1,24 +1,22 @@
 # CENTOS 8
 
 ## TIME-ZONE +7:00
+<details>
+<summary>https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/</summary>
 
-0. links:
-> https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/
-
-1. change
+### change
 
 ```bash
 timedatectl set-timezone Asia/Ho_Chi_Minh
 ```
-
+</details>
 
 ## NGINX
 
-0. links:
+<details>
+<summary>https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7</summary>
 
-https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
-
-1. install
+### install
 
 ```bash
 sudo yum install epel-release
@@ -31,26 +29,25 @@ sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 ```
 
-2. config
+### config
 
 ```bash
 /etc/nginx/nginx.conf
 ```
 
-3. start/stop
+### start/stop
 
 ```bash
 sudo systemctl enable nginx
 /usr/share/nginx/html   # default server root
 ```
+</details>
 
 ## NGINX-RTMP-MODULE
+<details>
+<summary>https://www.howtoforge.com/tutorial/how-to-install-nginx-with-rtmp-module-on-centos/</summary>
 
-0. links
-
-https://www.howtoforge.com/tutorial/how-to-install-nginx-with-rtmp-module-on-centos/
-
-1. install
+### install
 
 ```bash
 sudo yum -y groupinstall 'Development Tools'
@@ -268,7 +265,11 @@ systemctl restart nginx
 
 > rtmp://192.168.1.10:1935/stream/
 
+</details>
+
 ## FIREWALLD
+<details>
+            <summary>Open Ports</summary>
 
 ```bash
 sudo firewall-cmd --permanent --zone=public --add-service=http 
@@ -278,14 +279,14 @@ sudo firewall-cmd --zone=public --permanent --add-port=4990-4999/udp
 sudo firewall-cmd --reload
 sudo firewall-cmd --zone=public --permanent --list-ports
 ```
+</details>
 
 ## SSL
 
-1. links:
+<details>
+            <summary>https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-centos-7/</summary>
 
-https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-centos-7/
-
-2. install
+### install
 
 ```bash
 sudo yum install certbot
@@ -384,6 +385,7 @@ sudo crontab -e
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q renew --renew-hook "systemctl reload nginx"
 sudo certbot renew --dry-run
 ```
+</details>
 
 ## GIT
 
@@ -441,22 +443,24 @@ sudo pm2 update	            #update PM2 package
 ```
 
 ## MYSQL
+<details>
+            <summary>Install</summary>
 
-1. version 8.0
+#### version 8.0
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 sudo yum install mysql-community-server
 ```
 
-2. version 5.7
+#### version 5.7
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 sudo yum install mysql-community-server
 ```
 
-3. manage
+#### manage
 
 ```bash
 sudo systemctl enable mysqld
@@ -464,14 +468,14 @@ sudo systemctl start mysqld
 sudo systemctl status mysqld
 ```
 
-4. change password
+#### change password
 
 ```bash
 sudo grep 'temporary password' /var/log/mysqld.log     # print temp password
 sudo mysql_secure_installation                         # enter temp password, new password
 ```
 
-5. connect
+#### connect
 
 ```bash
 mysql -u root -p
@@ -486,6 +490,7 @@ CREATE TABLE users (
   email VARCHAR(30)
 );
 ```
+</details>
 
 ## DISK-SPACE
 
@@ -496,16 +501,16 @@ mem -s
 
 ## SWAP
 
-0. links:
+<details>
+            <summary>https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04?comment=551</summary>
 
-https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04?comment=551
-
-1. increase
+#### increase
 
 ```bash
 swapoff -a
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=1024k
 ```
+</details>
 
 ## NETWORK
 
