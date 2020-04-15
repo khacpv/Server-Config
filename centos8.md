@@ -396,7 +396,7 @@ git --version
 ## SSH
 
 <details>
-            <sumarry>https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7</sumarry>
+            <summary>https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7</summary>
 
 ### install:
 
