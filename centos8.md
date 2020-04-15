@@ -441,16 +441,16 @@ sudo pm2 update	            #update PM2 package
 
 ## MYSQL
 <details>
-            <summary>Install</summary>
+            <summary>https://linuxize.com/post/install-mysql-on-centos-7/</summary>
 
-#### version 8.0
+#### install version 8.0
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 sudo yum install mysql-community-server
 ```
 
-#### version 5.7
+#### install version 5.7
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
