@@ -1,4 +1,4 @@
-###################### Time-zone to +7:00 ###################### 
+###################### TIME-ZONE +7:00 ###################### 
 0. links:
 https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/
 
