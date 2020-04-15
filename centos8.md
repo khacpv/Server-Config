@@ -4,8 +4,6 @@
 <details>
 <summary>https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/</summary>
 
-### change
-
 ```bash
 timedatectl set-timezone Asia/Ho_Chi_Minh
 ```
