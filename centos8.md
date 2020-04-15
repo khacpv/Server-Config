@@ -515,3 +515,12 @@ sudo dd if=/dev/zero of=/swapfile bs=1024 count=1024k
 ip addr
 ```
 
+## REDIS
+
+## MQTT
+
+## DOCKER
+
+## MONGO-DB
+
+## OTHERS
