@@ -1,54 +1,79 @@
-###################### TIME-ZONE +7:00 ###################### 
-0. links:
-https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/
+# CENTOS 8
 
-1. install
+## TIME-ZONE +7:00
+
+0. links:
+> https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/
+
+1. change
+
+```bash
 timedatectl set-timezone Asia/Ho_Chi_Minh
+```
 
 
-# NGINX
+## NGINX
+
 0. links:
+
 https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7
 
 1. install
+
+```bash
 sudo yum install epel-release
 sudo yum install nginx
 sudo systemctl start nginx
 
+# open ports
 sudo firewall-cmd --permanent --zone=public --add-service=http 
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
+```
 
-2 config
+2. config
+
+```bash
 /etc/nginx/nginx.conf
+```
 
 3. start/stop
+
+```bash
 sudo systemctl enable nginx
 /usr/share/nginx/html   # default server root
+```
 
+## FIREWALLD
 
-###################### FIREWALLD ###################### 
+```bash
 sudo firewall-cmd --permanent --zone=public --add-service=http 
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --zone=public --permanent --add-port=3000/tcp
 sudo firewall-cmd --zone=public --permanent --add-port=4990-4999/udp
 sudo firewall-cmd --reload
 sudo firewall-cmd --zone=public --permanent --list-ports
+```
 
+## SSL
 
-###################### SSL ###################### 
 1. links:
+
 https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-centos-7/
 
 2. install
+
+```bash
 sudo yum install certbot
 sudo openssl dhparam -out /etc/ssl/certs/dhparam.pem 2048
 sudo mkdir -p /var/lib/letsencrypt/.well-known
 sudo chgrp nginx /var/lib/letsencrypt
 sudo chmod g+s /var/lib/letsencrypt
 sudo mkdir /etc/nginx/snippets
+```
 
-```/etc/nginx/snippets/letsencrypt.conf
+#### **`/etc/nginx/snippets/letsencrypt.conf`**
+```shell
 location ^~ /.well-known/acme-challenge/ {
   allow all;
   root /var/lib/letsencrypt/;
@@ -57,7 +82,8 @@ location ^~ /.well-known/acme-challenge/ {
 }
 ```
 
-```/etc/nginx/snippets/ssl.conf
+#### **`/etc/nginx/snippets/ssl.conf`**
+```shell
 ssl_dhparam /etc/ssl/certs/dhparam.pem;
 
 ssl_session_timeout 1d;
@@ -78,7 +104,8 @@ add_header X-Frame-Options SAMEORIGIN;
 add_header X-Content-Type-Options nosniff;
 ```
 
-```/etc/nginx/conf.d/example.com.conf
+#### **`/etc/nginx/conf.d/example.com.conf`**
+```shell
 server {
   listen 80;
   server_name example.com www.example.com;
@@ -90,7 +117,8 @@ server {
 sudo systemctl reload nginx
 sudo certbot certonly --agree-tos --email admin@example.com --webroot -w /var/lib/letsencrypt/ -d example.com -d www.example.com
 
-```/etc/nginx/conf.d/example.com.conf
+#### **`/etc/nginx/conf.d/example.com.conf`**
+```shell
 server {
     listen 80;
     server_name www.example.com example.com;
@@ -126,31 +154,44 @@ server {
 }
 ```
 
+```shell
 sudo systemctl reload nginx
-
 sudo crontab -e
 0 */12 * * * root test -x /usr/bin/certbot -a \! -d /run/systemd/system && perl -e 'sleep int(rand(3600))' && certbot -q renew --renew-hook "systemctl reload nginx"
 sudo certbot renew --dry-run
+```
 
+## GIT
 
-###################### GIT ###################### 
+```bash
 sudo yum install git
+git config --global core.editor "nano"
 git --version
+```
 
-###################### SSH ###################### 
-1. links:
+## SSH
+
+0. links:
+
 https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7
 
 2. install:
+
+```bash
 ssh-keygen
 ssh-copy-id username@remote_host
 cat ~/.ssh/id_rsa.pub
+```
 
-###################### NODEJS - NPM - YARN - NVM ###################### 
+## NODEJS - NPM - YARN - NVM
+
 0. links:
+
 https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/
 
 1. install
+
+```bash
 curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
 source ~/.bash_profile
 nvm list-remote
@@ -160,9 +201,11 @@ nvm use v0.10.30
 nvm alias default v0.10.30
 node --version
 npm --version
+```
 
+## PM2
 
-###################### PM2 ###################### 
+```shell
 sudo npm i -g pm2 
 sudo pm2 start server.js
 sudo pm2 logs               #view logs for all processes 
@@ -171,30 +214,47 @@ sudo pm2 startup systemd    #or explicitly specify systemd as startup system
 sudo pm2 save               #save current process list on reboot
 sudo pm2 unstartup          #disable PM2 from starting at system boot
 sudo pm2 update	            #update PM2 package
+```
 
-###################### MYSQL ###################### 
+## MYSQL
+
 1. version 8.0
+
+```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 sudo yum install mysql-community-server
-
+```
 
 2. version 5.7
+
+```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 sudo yum install mysql-community-server
+```
 
 3. manage
+
+```bash
 sudo systemctl enable mysqld
 sudo systemctl start mysqld
 sudo systemctl status mysqld
+```
 
 4. change password
+
+```bash
 sudo grep 'temporary password' /var/log/mysqld.log     # print temp password
 sudo mysql_secure_installation                         # enter temp password, new password
+```
 
 5. connect
+
+```bash
 mysql -u root -p
 CREATE DATABASE test_db;
 use test_db;
+```
+
 ```SQL
 CREATE TABLE users (
   id INT PRIMARY KEY,
@@ -203,21 +263,31 @@ CREATE TABLE users (
 );
 ```
 
-###################### DISK-SPACE ###################### 
+## DISK-SPACE
+
+```bash
 df -h
 mem -s
+```
 
-###################### SWAP ###################### 
+## SWAP
+
 0. links:
+
 https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04?comment=551
 
 1. increase
+
+```bash
 swapoff -a
 sudo dd if=/dev/zero of=/swapfile bs=1024 count=1024k
+```
 
-
-###################### NETWORK ###################### 
+## NETWORK
 
 1. find IP
+
+```bash
 ip addr
+```
 
