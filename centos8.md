@@ -397,25 +397,23 @@ git --version
 
 ## SSH
 
-0. links:
+<details>
+            <sumarry>https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7</sumarry>
 
-https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7
-
-2. install:
+### install:
 
 ```bash
 ssh-keygen
 ssh-copy-id username@remote_host
 cat ~/.ssh/id_rsa.pub
 ```
+</details>
 
 ## NODEJS - NPM - YARN - NVM
+<details>
+            <summary>https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/</summary>
 
-0. links:
-
-https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/
-
-1. install
+### install
 
 ```bash
 curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
@@ -428,6 +426,7 @@ nvm alias default v0.10.30
 node --version
 npm --version
 ```
+</details>
 
 ## PM2
 
