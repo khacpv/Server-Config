@@ -385,6 +385,7 @@ server {
 }
 ```
 
+### auto renew-keys
 ```shell
 sudo systemctl reload nginx
 sudo crontab -e
