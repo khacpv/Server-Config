@@ -308,8 +308,10 @@ firewall-cmd --reload
 
 <details>
             <summary>https://linuxize.com/post/secure-nginx-with-let-s-encrypt-on-centos-7/</summary>
+</details>
 
-### install
+<details>
+            <summary>install</summary>
 
 ```bash
 sudo yum install certbot
@@ -401,8 +403,11 @@ server {
     # . . . other code
 }
 ```
+</details>
 
-### auto renew-keys
+<details>
+            <summary>auto renew-keys</summary>
+
 ```shell
 sudo systemctl reload nginx
 sudo crontab -e
