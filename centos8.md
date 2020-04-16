@@ -46,8 +46,10 @@ sudo systemctl enable nginx
 ## NGINX-RTMP-MODULE
 <details>
 <summary>https://www.howtoforge.com/tutorial/how-to-install-nginx-with-rtmp-module-on-centos/</summary>
+</details>
 
-### install
+<details>
+            <summary>Install</summary>
 
 ```bash
 sudo yum -y groupinstall 'Development Tools'
@@ -131,8 +133,10 @@ chown -R nginx:nginx /var/cache/nginx/
 nginx -t
 nginx -V
 ```
+</details>
 
-### config nginx as a service
+<details>
+            <summary>Config nginx as a service</summary>
 
 #### **`/lib/systemd/system/nginx.service`**
 ```bash
@@ -256,12 +260,16 @@ chown -R nginx:nginx /mnt/mp4s
 nginx -t
 systemctl restart nginx
 ```
+</details>
 
-### VLC
+<details>
+            <summary>VLC</summary>
 
 > rtmp://192.168.1.10:1935/vod/file.mp4
+</details>
 
-### OBS
+<details>
+            <summary>OBS</summary>
 
 > rtmp://192.168.1.10:1935/stream/
 
