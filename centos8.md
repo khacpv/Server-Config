@@ -278,6 +278,14 @@ sudo firewall-cmd --reload
 sudo firewall-cmd --zone=public --permanent --list-ports
 ```
 </details>
+<details>
+            <summary>Close Ports</summary>
+
+```bash
+firewall-cmd --zone=public --remove-port=12345/tcp --permanent
+firewall-cmd --reload
+```
+</details>
 
 ## SSL
 
