@@ -443,8 +443,10 @@ git --version
 
 <details>
             <summary>https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-centos7</summary>
+</details>
 
-### install:
+<details>
+            <summary>install</summary>
 
 ```bash
 ssh-keygen
