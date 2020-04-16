@@ -3,7 +3,10 @@
 ## TIME-ZONE +7:00
 <details>
 <summary>https://vinasupport.com/thay-doi-timezone-tren-rhel-centos-7-linux-server/</summary>
+</details>
 
+<details>
+            <summary>Change to GMT+7</summary>
 ```bash
 timedatectl
 timedatectl set-timezone Asia/Ho_Chi_Minh
