@@ -15,8 +15,11 @@ timedatectl list-timezones
 
 <details>
 <summary>https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7</summary>
+</details>
 
-### install
+
+<details>
+            <summary>install</summary>
 
 ```bash
 sudo yum install epel-release
@@ -28,14 +31,18 @@ sudo firewall-cmd --permanent --zone=public --add-service=http
 sudo firewall-cmd --permanent --zone=public --add-service=https
 sudo firewall-cmd --reload
 ```
+</details>
 
-### config
+<details>
+            <summary>config</summary>
 
 ```bash
 /etc/nginx/nginx.conf
 ```
+</details>
 
-### start/stop
+<details>
+            <summary>start/stop</summary>
 
 ```bash
 sudo systemctl enable nginx
