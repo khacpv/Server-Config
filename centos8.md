@@ -521,7 +521,7 @@ sudo yum install mysql-community-server
 </details>
 
 <details>
-            <summary>Manage</summary>
+            <summary>Start, Stop</summary>
 
 ```bash
 sudo systemctl enable mysqld
