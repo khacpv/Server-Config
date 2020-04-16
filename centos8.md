@@ -593,6 +593,57 @@ ip addr
 </details>
 
 ## SENDMAIL
+<details>
+            <summary>https://tecadmin.net/install-sendmail-server-on-centos-rhel-server/</summary>
+</details>
+<details>
+            <summary>install</summary>
+
+#### some notes:
+
+**access** — Allow/Deny other systems to use Sendmail for outbound emails.
+**domaintable** — Used for domain name mapping for Sendmail.
+**local-host-names** — Used to define aliases for the host.
+**mailertable** — Defined the instructions that override routing for particular domains.
+**virtusertable** — Specifies a domain-specific form of aliasing, allowing multiple virtual domains to be hosted on one machine.
+
+```bash
+yum install sendmail sendmail-cf m4
+```
+<details>
+<details>
+            <summary>Config</summary>
+
+#### **`/etc/mail/sendmail.mc`**
+```bash
+dnl DAEMON_OPTIONS(`Port=smtp,Addr=127.0.0.1, Name=MTA')dnl    # comment this line to allow receiving from anywhere
+FEATURE(`relay_hosts_only')dnl    # Add this line above ‘MAILER’ option
+```
+
+```bash
+hostname >> /etc/mail/relay-domains     # replace hostname with PC's Full hostname
+```
+
+#### recompile
+````bash
+m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
+````
+
+#### restart
+```bash
+/etc/init.d/sendmail restart
+```
+
+#### fix sendmail slow
+
+#### **`/etc/hosts`**
+```bash
+127.0.0.1 tirossvn
+::1       tirossvn
+127.0.0.1 localhost.localdomain localhost tirossvn.oicsoft.com
+127.0.0.1 localhost.localdomain localhost tirossvn
+```
+</details>
 
 ## REDIS
 
