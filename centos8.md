@@ -601,16 +601,21 @@ ip addr
 
 #### some notes:
 
+
 **access** — Allow/Deny other systems to use Sendmail for outbound emails.
+
 **domaintable** — Used for domain name mapping for Sendmail.
+
 **local-host-names** — Used to define aliases for the host.
+
 **mailertable** — Defined the instructions that override routing for particular domains.
+
 **virtusertable** — Specifies a domain-specific form of aliasing, allowing multiple virtual domains to be hosted on one machine.
 
 ```bash
 yum install sendmail sendmail-cf m4
 ```
-<details>
+</details>
 <details>
             <summary>Config</summary>
 
@@ -638,10 +643,9 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 #### **`/etc/hosts`**
 ```bash
-127.0.0.1 tirossvn
-::1       tirossvn
-127.0.0.1 localhost.localdomain localhost tirossvn.oicsoft.com
-127.0.0.1 localhost.localdomain localhost tirossvn
+127.0.0.1 localhost
+::1       localhost
+127.0.0.1 localhost.localdomain localhost my-website.com
 ```
 </details>
 
