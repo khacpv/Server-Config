@@ -597,10 +597,7 @@ ip addr
             <summary>https://tecadmin.net/install-sendmail-server-on-centos-rhel-server/</summary>
 </details>
 <details>
-            <summary>install</summary>
-
-#### some notes:
-
+            <summary>Notes</summary>
 
 **access** — Allow/Deny other systems to use Sendmail for outbound emails.
 
@@ -611,11 +608,16 @@ ip addr
 **mailertable** — Defined the instructions that override routing for particular domains.
 
 **virtusertable** — Specifies a domain-specific form of aliasing, allowing multiple virtual domains to be hosted on one machine.
+</details>
+
+<details>
+            <summary>Install</summary>
 
 ```bash
 yum install sendmail sendmail-cf m4
 ```
 </details>
+
 <details>
             <summary>Config</summary>
 
@@ -638,8 +640,10 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 ```bash
 /etc/init.d/sendmail restart
 ```
+</details>
 
-#### fix sendmail slow
+<details>
+            <summary>fix sendmail slow</summary>
 
 #### **`/etc/hosts`**
 ```bash
