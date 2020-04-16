@@ -663,4 +663,6 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 ## MONGO-DB
 
+## WORDPRESS - PHP-FPM
+
 ## OTHERS
