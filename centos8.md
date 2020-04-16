@@ -441,8 +441,10 @@ cat ~/.ssh/id_rsa.pub
 ## NODEJS - NPM - YARN - NVM
 <details>
             <summary>https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/</summary>
+</details>
 
-### install
+<details>
+            <summary>install</summary>
 
 ```bash
 curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
@@ -473,37 +475,47 @@ sudo pm2 update	            #update PM2 package
 ## MYSQL
 <details>
             <summary>https://linuxize.com/post/install-mysql-on-centos-7/</summary>
+</details>
 
-#### install version 8.0
+<details>
+            <summary>install version 8.0</summary>
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql80-community-release-el7-1.noarch.rpm
 sudo yum install mysql-community-server
 ```
+</details>
 
-#### install version 5.7
+<details>
+            <summary>install version 5.7</summary>
 
 ```bash
 sudo yum localinstall https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
 sudo yum install mysql-community-server
 ```
+</details>
 
-#### manage
+<details>
+            <summary>Manage</summary>
 
 ```bash
 sudo systemctl enable mysqld
 sudo systemctl start mysqld
 sudo systemctl status mysqld
 ```
+</details>
 
-#### change password
+<details>
+            <summary>Change password</summary>
 
 ```bash
 sudo grep 'temporary password' /var/log/mysqld.log     # print temp password
 sudo mysql_secure_installation                         # enter temp password, new password
 ```
+</details>
 
-#### connect
+<details>
+            <summary>connect</summary>
 
 ```bash
 mysql -u root -p
@@ -521,18 +533,22 @@ CREATE TABLE users (
 </details>
 
 ## DISK-SPACE
-
+<details>
+            <summary>list disk-spaces</summary>
 ```bash
 df -h
 mem -s
 ```
+</details>
 
 ## SWAP
 
 <details>
             <summary>https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04?comment=551</summary>
+</details>
 
-#### increase
+<details>
+            <summary>increase</summary>
 
 ```bash
 swapoff -a
@@ -542,11 +558,15 @@ sudo dd if=/dev/zero of=/swapfile bs=1024 count=1024k
 
 ## NETWORK
 
-1. find IP
+<details>
+            <summary>Find IP</summary>
 
 ```bash
 ip addr
 ```
+</details>
+
+## SENDMAIL
 
 ## REDIS
 
