@@ -288,6 +288,14 @@ systemctl restart nginx
 
 ## FIREWALLD
 <details>
+            <summary>List Ports</summary>
+
+```bash
+sudo firewall-cmd --zone=public --permanent --list-ports
+```
+</details>
+
+<details>
             <summary>Open Ports</summary>
 
 ```bash
