@@ -429,12 +429,15 @@ sudo certbot renew --dry-run
 </details>
 
 ## GIT
+<details>
+            <summary>install</summary>
 
 ```bash
 sudo yum install git
 git config --global core.editor "nano"
 git --version
 ```
+</details>
 
 ## SSH
 
@@ -472,9 +475,18 @@ npm --version
 </details>
 
 ## PM2
+<details>
+            <summary>Install</summary>
 
 ```shell
 sudo npm i -g pm2 
+```
+</details>
+
+<details>
+            <summary>Manage</summary>
+
+```shell
 sudo pm2 start server.js
 sudo pm2 logs               #view logs for all processes 
 sudo pm2 startup            #enable PM2 to start at system boot
@@ -483,6 +495,7 @@ sudo pm2 save               #save current process list on reboot
 sudo pm2 unstartup          #disable PM2 from starting at system boot
 sudo pm2 update	            #update PM2 package
 ```
+</details>
 
 ## MYSQL
 <details>
