@@ -491,7 +491,7 @@ ssh root@ip "shell command or bash script"
 
 ```bash
 scp root@ip:/file-path ./                                   # copy from remote to local
-scp ./file-to-copy root@ip:/path-to-save                    # copy from remote to local
+scp ./file-to-copy root@ip:/path-to-save                    # copy from local to remote
 ```
 </details>
 
