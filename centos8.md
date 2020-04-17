@@ -439,6 +439,16 @@ git --version
 ```
 </details>
 
+<details>
+            <summary>reset local branch to remote</summary>
+
+```bash
+git fetch origin
+git reset --hard origin/master
+```
+* note: save current changes to another branch (just in case)
+</details>
+
 ## SSH
 
 <details>
