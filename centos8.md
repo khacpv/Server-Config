@@ -15,6 +15,15 @@ timedatectl list-timezones
 ```
 </details>
 
+<details>
+            <summary>Set Time to variable</summary>
+
+```bash
+folderBackup="backup_$(date +"%Y-%m-%d")"
+echo $folderBackup
+```
+</details>
+
 ## NGINX
 
 <details>
@@ -465,6 +474,23 @@ cat ~/.ssh/id_rsa.pub
 ```
 </details>
 
+<details>
+            <summary>run command/bash on remote</summary>
+
+```bash
+ssh root@ip "shell command or bash script"
+```
+</details>
+
+<details>
+            <summary>copy with scp</summary>
+
+```bash
+scp root@ip:/file-path ./                                   # copy from remote to local
+scp ./file-to-copy root@ip:/path-to-save                    # copy from remote to local
+```
+</details>
+
 ## NODEJS - NPM - YARN - NVM
 <details>
             <summary>https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/</summary>
@@ -566,6 +592,14 @@ CREATE TABLE users (
   name VARCHAR(30),
   email VARCHAR(30)
 );
+```
+</details>
+
+<details>
+            <summary>dump database</summary>
+
+```bash
+mysqldump -u root -p[password] database-name > /file-path.sql
 ```
 </details>
 
@@ -676,3 +710,11 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 ## WORDPRESS - PHP-FPM
 
 ## OTHERS
+
+<details>
+            <summary>zip a folder</summary>
+
+```bash
+zip -r file.zip /path-to-compress
+```
+</details>
