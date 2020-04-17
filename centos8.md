@@ -713,7 +713,7 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 ## WORDPRESS - PHP-FPM
 
-## CRON TASKS
+## CRONTAB
 
 <details>
             <summary>run daily task</summary>
