@@ -709,6 +709,23 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 ## WORDPRESS - PHP-FPM
 
+## CRON TASKS
+
+<details>
+            <summary>run daily task</summary>
+
+```bash
+env EDITOR=nano crontab -e          # open crontab with NANO
+
+# min  hour  day_of_month  month  day_of_week  your_command
+0  3  *  *  *  sh /path/to/your/file            # run daily task at 3:00am
+
+crontab -l  # show crontab list
+crontab -r  # remove crontab
+
+```
+</details>
+
 ## OTHERS
 
 <details>
