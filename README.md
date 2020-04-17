@@ -1,6 +1,6 @@
 # Config Servers
 
-this repo includes config-files for run on platforms-os.
+this repo includes config-files to run on platforms-os.
 
 ### centos8.md 
 
