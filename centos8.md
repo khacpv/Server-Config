@@ -16,6 +16,10 @@ timedatectl list-timezones
 </details>
 
 <details>
+<summary>https://www.cyberciti.biz/faq/unix-linux-getting-current-date-in-bash-ksh-shell-script/</summary>
+</details>
+
+<details>
             <summary>Set Time to variable</summary>
 
 ```bash
