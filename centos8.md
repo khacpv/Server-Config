@@ -739,3 +739,12 @@ crontab -r  # remove crontab
 zip -r file.zip /path-to-compress
 ```
 </details>
+
+<details>
+            <summary>display folder size</summary>
+
+```bash
+dh -h folder-path       # sub-directories
+dh -sh folder-path      # only path
+```
+</details>
