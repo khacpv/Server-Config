@@ -603,7 +603,8 @@ CREATE TABLE users (
             <summary>dump database</summary>
 
 ```bash
-mysqldump -u root -p[password] database-name > /file-path.sql
+mysql -u root -p[password] -Ae\"FLUSH TABLES WITH READ LOCK; SELECT SLEEP(5)\" &
+mysqldump -u root -p[password] --single-transaction --routines --triggers database-name > /file-path.sql
 ```
 </details>
 
