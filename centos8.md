@@ -736,7 +736,7 @@ crontab -r  # remove crontab
             <summary>zip a folder</summary>
 
 ```bash
-zip -r file.zip /path-to-compress
+zip -r file.zip /path-to-compress -x \*node_modules\*
 ```
 </details>
 
