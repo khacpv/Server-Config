@@ -608,6 +608,15 @@ mysqldump -u root -p[password] --single-transaction --routines --triggers databa
 ```
 </details>
 
+<details>
+            <summary>Graph Tree & Hierachy</summary>
+
+Adjacency List Model vs Nested Set Model: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
+
+Ebook: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
+
+</details>
+
 ## DISK-SPACE
 <details>
             <summary>list disk-spaces</summary>
