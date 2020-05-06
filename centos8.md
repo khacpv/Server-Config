@@ -754,6 +754,7 @@ zip -9 -r file.zip /path-to-compress -x \*node_modules\*    # ignore node_module
             <summary>display folder size</summary>
 
 ```bash
+df -h folder-path      # size of sub-directory
 du -h folder-path      # size of sub-directory
 dh -h folder-path       # sub-directories
 dh -sh folder-path      # only path
