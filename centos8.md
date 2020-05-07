@@ -55,6 +55,7 @@ sudo firewall-cmd --reload
 
 ```bash
 /etc/nginx/nginx.conf
+nginx -t
 ```
 </details>
 
