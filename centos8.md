@@ -625,6 +625,27 @@ Ebook: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 
 </details>
 
+<details>
+            <summary>Forward Port & Tunning</summary>
+
+#### **`/etc/ssh/sshd_config`**
+```shell
+AllowTcpForwarding yes  # enable TCP forwarding: yes
+GatewayPorts yes        # remote port forwarding
+```
+
+```shell
+sudo systemctl restart sshd         # or 'ssh' instead of 'sshd'
+sudo service sshd restart
+```
+
+```shell
+ssh -L 4000:127.0.0.1:3306 root@example.com # port forwarding from 3306 to 4000
+```
+
+
+</details>
+
 ## DISK-SPACE
 <details>
             <summary>list disk-spaces</summary>
