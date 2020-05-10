@@ -640,9 +640,16 @@ sudo service sshd restart
 ```
 
 ```shell
-ssh -L 4000:127.0.0.1:3306 root@remote-server # port forwarding from 3306 to 4000
+ssh -L 4000:127.0.0.1:3306 root@remote-server # port forwarding from 3306 to 4000   # keep-running
 ```
 
+```shell
+ssh -M -S my-socket-name -fNT -L 8888:localhost:8888 user@hostname      # run in background
+ssh -S my-socket-name -O check root@hostname
+
+# close port-forwarding
+ssh -S my-socket-name -O exit root@hostname
+```
 
 </details>
 
