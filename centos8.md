@@ -640,7 +640,7 @@ sudo service sshd restart
 ```
 
 ```shell
-ssh -L 4000:127.0.0.1:3306 root@example.com # port forwarding from 3306 to 4000
+ssh -L 4000:127.0.0.1:3306 root@remote-server # port forwarding from 3306 to 4000
 ```
 
 
