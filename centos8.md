@@ -666,6 +666,30 @@ mem -s
 ## SWAP
 
 <details>
+            <summary>How to add Swap space</summary>
+
+https://linuxize.com/post/how-to-add-swap-space-on-centos-7/
+
+```bash
+sudo swapon --show      # know has Swap or not
+sudo fallocate -l 2G /swapfile      # create 2G of swap
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
+#### **`/etc/ssh/sshd_config`**
+```bash
+/swapfile swap swap defaults 0 0
+```
+
+```bash
+sudo swapon --show      #verify
+```
+
+</details>
+
+<details>
             <summary>https://www.digitalocean.com/community/tutorials/how-to-add-swap-on-ubuntu-12-04?comment=551</summary>
 </details>
 
