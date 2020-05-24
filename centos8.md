@@ -449,6 +449,7 @@ sudo certbot renew --dry-run
 certbot certificates    # show all Domain Name
 certbot delete --cert-name Domain_Name
 ```
+</details>
 
 ## GIT
 <details>
