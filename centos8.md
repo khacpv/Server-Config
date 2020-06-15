@@ -330,6 +330,14 @@ firewall-cmd --reload
 ```
 </details>
 
+<details>
+            <summary>Open port 22</summary>
+
+```bash
+sudo ufw allow 22/tcp
+```
+</details>
+
 ## SSL
 
 <details>
