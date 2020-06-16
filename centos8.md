@@ -81,7 +81,7 @@ sudo yum -y groupinstall 'Development Tools'
 sudo yum -y install epel-release
 sudo yum install -y  wget git unzip perl perl-devel perl-ExtUtils-Embed libxslt libxslt-devel libxml2 libxml2-devel gd gd-devel pcre-devel GeoIP GeoIP-devel
 cd /usr/local/src
-wget https://nginx.org/download/nginx-1.14.0.tar.gz
+wget https://nginx.org/download/nginx-1.19.0.tar.gz
 tar -xzvf nginx-1.14.0.tar.gz
 wget https://ftp.pcre.org/pub/pcre/pcre-8.42.zip
 unzip pcre-8.42.zip
@@ -92,7 +92,7 @@ tar -xzvf openssl-1.1.0h.tar.gz
 git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
 rm -f *.tar.gz *.zip
 ls -lah
-cd nginx-1.14.0/
+cd nginx-1.19.0/
 ./configure --prefix=/etc/nginx \
             --sbin-path=/usr/sbin/nginx \
             --modules-path=/usr/lib64/nginx/modules \
