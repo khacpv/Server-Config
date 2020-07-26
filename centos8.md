@@ -398,8 +398,10 @@ server {
 }
 ```
 
+```
 sudo systemctl reload nginx
 sudo certbot certonly --agree-tos --email admin@example.com --webroot -w /var/lib/letsencrypt/ -d example.com -d www.example.com
+```
 
 #### **`/etc/nginx/conf.d/example.com.conf`**
 ```shell
