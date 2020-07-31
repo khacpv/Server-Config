@@ -802,6 +802,14 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 ## WORDPRESS - PHP-FPM
 
+## S3 AMAZON
+
+1. Copy From Bucket to another https://aws.amazon.com/premiumsupport/knowledge-center/move-objects-s3-bucket/
+
+2. Change CLI user: `$aws configure`
+
+3. Add IMA user and restrict to a bucket: https://aws.amazon.com/premiumsupport/knowledge-center/s3-console-access-certain-bucket/
+
 ## CRONTAB
 
 <details>
