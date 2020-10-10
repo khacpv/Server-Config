@@ -824,6 +824,12 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 3. Add IMA user and restrict to a bucket: https://aws.amazon.com/premiumsupport/knowledge-center/s3-console-access-certain-bucket/
 
+4. Custom domain for a bucket
+
+5. Add SSL for cloudFront
+
+6. Upload file using npm
+
 ## CRONTAB
 
 <details>
