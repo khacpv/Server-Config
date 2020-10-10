@@ -679,7 +679,16 @@ ssh -S my-socket-name -O exit root@hostname
 ```bash
 df -h
 mem -s
+```
+           <summary>Find a biggest files in /</summary>
+           
+```bash
 sudo du -a / 2>/dev/null | sort -n -r | head -n 20  # find a biggest files in /
+```
+
+           <summary>print folder size in GB or MB</summary>
+           
+```bash
 sudo du -sh /var/log/nginx/         # print folder size in GB or MB
 ```
 </details>
