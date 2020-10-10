@@ -680,12 +680,15 @@ ssh -S my-socket-name -O exit root@hostname
 df -h
 mem -s
 ```
+</details>
+<details>
            <summary>Find a biggest files in /</summary>
            
 ```bash
 sudo du -a / 2>/dev/null | sort -n -r | head -n 20  # find a biggest files in /
 ```
-
+</details>
+<details>
            <summary>print folder size in GB or MB</summary>
            
 ```bash
