@@ -553,6 +553,17 @@ sudo npm i -g pm2
 </details>
 
 <details>
+            <summary>Retain Memory</summary>
+
+```shell
+pm2 install pm2-logrotate
+pm2 set pm2-logrotate:max_size 50M
+pm2 set pm2-logrotate:retain 10
+pm2 set pm2-logrotate:compress true
+```
+</details>
+
+<details>
             <summary>Manage</summary>
 
 ```shell
