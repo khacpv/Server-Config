@@ -410,7 +410,7 @@ server {
 
 ```
 sudo systemctl reload nginx
-sudo certbot certonly --agree-tos --email admin@example.com --webroot -w /var/lib/letsencrypt/ -d example.com -d www.example.com
+sudo certbot certonly --agree-tos --email khacpv@gmail.com --webroot -w /var/lib/letsencrypt/ -d example.com -d www.example.com
 ```
 
 #### **`/etc/nginx/conf.d/example.com.conf`**
@@ -528,7 +528,7 @@ scp ./file-to-copy root@ip:/path-to-save                    # copy from local to
 
 ## NODEJS - NPM - YARN - NVM
 <details>
-            <summary>https://www.e2enetworks.com/help/knowledge-base/how-to-install-node-js-and-npm-on-centos/</summary>
+            <summary>https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server#install-node-using-the-node-version-manager</summary>
 </details>
 
 <details>
