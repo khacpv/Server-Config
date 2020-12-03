@@ -28,6 +28,16 @@ echo $folderBackup
 ```
 </details>
 
+<details>
+            <summary>Fix LC_CTYPE: cannot change locale (UTF-8)</summary>
+
+#### `/etc/environment`
+```bash
+LANG=en_US.utf-8
+LC_ALL=en_US.utf-8
+```
+</details>
+
 ## NGINX
 
 <details>
