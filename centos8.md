@@ -528,20 +528,22 @@ scp ./file-to-copy root@ip:/path-to-save                    # copy from local to
 
 ## NODEJS - NPM - YARN - NVM
 <details>
-            <summary>https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-a-centos-7-server#install-node-using-the-node-version-manager</summary>
+            <summary>https://www.liquidweb.com/kb/how-to-install-node-js-via-nvm-node-version-manager-on-centos-7/</summary>
 </details>
 
 <details>
             <summary>install</summary>
 
 ```bash
-curl https://raw.githubusercontent.com/creationix/nvm/v0.13.1/install.sh | bash
+curl https://raw.githubusercontent.com/creationix/nvm/v0.37.2/install.sh | bash
+source ~/.bashrc
 source ~/.bash_profile
 nvm list-remote
-nvm install v0.10.30
+nvm install v12.20.0
 nvm list
-nvm use v0.10.30
-nvm alias default v0.10.30
+nvm use v12.20.0
+nvm current
+#nvm alias default v12.20.0
 node --version
 npm --version
 
