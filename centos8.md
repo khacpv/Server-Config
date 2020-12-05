@@ -832,6 +832,48 @@ m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
 
 ## REDIS
 
+<details>
+            <summary>https://www.digitalocean.com/community/tutorials/how-to-install-secure-redis-centos-7</summary>
+            
+</details>
+
+<details>
+            <summary>Install</summary>
+
+```bash
+sudo yum install epel-release
+sudo yum install redis -y
+sudo systemctl start redis.service  # start
+sudo systemctl enable redis  # auto start on boot
+sudo systemctl status redis.service  # check status
+```
+
+</details>
+
+<details>
+            <summary>Config</summary>
+
+```bash
+sudo systemctl status redis.service  # check status
+redis-cli ping # send ping
+sudo systemctl restart redis.service  # restart service
+redis-cli  # send commands
+```
+
+</details>
+
+<details>
+            <summary>Password</summary>
+
+### /etc/redis.conf
+
+```bash
+# SECURITY
+requirepass a_strong_password
+```
+
+</details>
+
 ## MQTT
 
 ## DOCKER
