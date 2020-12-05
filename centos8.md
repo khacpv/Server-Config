@@ -875,7 +875,7 @@ requirepass a_strong_password
 </details>
 
 <details>
-            <summary>[https://www.tutorialspoint.com/redis/redis_quick_guide.htm](Commands)</summary>
+            <summary>[Commands](https://www.tutorialspoint.com/redis/redis_quick_guide.htm)</summary>
 
 ```bash
 redis-cli
