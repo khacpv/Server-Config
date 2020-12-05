@@ -854,10 +854,10 @@ sudo systemctl status redis.service  # check status
             <summary>Config</summary>
 
 ```bash
-sudo systemctl status redis.service  # check status
-redis-cli ping # send ping
+sudo systemctl status redis.service   # check status
+redis-cli ping                        # send ping
 sudo systemctl restart redis.service  # restart service
-redis-cli  # send commands
+redis-cli                             # send commands
 ```
 
 </details>
@@ -870,6 +870,26 @@ redis-cli  # send commands
 ```bash
 # SECURITY
 requirepass a_strong_password
+```
+
+</details>
+
+<details>
+            <summary>[https://www.tutorialspoint.com/redis/redis_quick_guide.htm](Commands)</summary>
+
+```bash
+redis-cli
+SET key value
+SET keyNumber 1
+GET key
+GETRANGE key start end
+GETSET key value
+APPEND key value
+DEL key
+EXISTS key
+EXPIRE key seconds     # set expiry key after the specified time
+TYPE key
+
 ```
 
 </details>
