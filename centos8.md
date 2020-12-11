@@ -891,7 +891,7 @@ DEL key
 EXISTS key
 EXPIRE key seconds     # set expiry key after the specified time
 TYPE key
-
+redis-cli FLUSHALL
 ```
 
 </details>
