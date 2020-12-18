@@ -892,6 +892,18 @@ EXISTS key
 EXPIRE key seconds     # set expiry key after the specified time
 TYPE key
 redis-cli FLUSHALL
+config set stop-writes-on-bgsave-error no   # disable backup on storage
+```
+
+</details>
+
+<details>
+            <summary>Bugs</summary>
+
+[MISCONF Redis is configured to save RDB snapshots](https://stackoverflow.com/questions/19581059/misconf-redis-is-configured-to-save-rdb-snapshots)
+
+```bash
+config set stop-writes-on-bgsave-error no
 ```
 
 </details>
