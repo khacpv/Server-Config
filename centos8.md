@@ -948,10 +948,11 @@ crontab -r  # remove crontab
 </details>
 
 <details>
-            
             <summary>Tutorial</summary>
             
 https://finalstyle.com/danh-cho-ky-thuat-vien/huong-dan-cai-dat-va-cau-hinh-cronjob-tren-centos.html
+
+https://crontab.cronhub.io/
 
 ```bash
 sudo rpm -q cronie                     # check version
@@ -966,7 +967,6 @@ SHELL=/bin/bash
 PATH=/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
 
-# https://crontab.cronhub.io/
 # For details see man 4 crontabs
 
 # Example of job definition:
