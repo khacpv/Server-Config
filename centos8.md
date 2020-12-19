@@ -947,6 +947,49 @@ crontab -r  # remove crontab
 ```
 </details>
 
+<details>
+            
+            <summary>Tutorial</summary>
+            
+https://finalstyle.com/danh-cho-ky-thuat-vien/huong-dan-cai-dat-va-cau-hinh-cronjob-tren-centos.html
+
+```bash
+sudo rpm -q cronie                     # check version
+sudo yum install cronie                # install
+sudo systemctl status crond.service    # check status
+```
+
+> sudo cat /etc/crontab
+
+```
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO=root
+
+# https://crontab.cronhub.io/
+# For details see man 4 crontabs
+
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  .------- month (1 - 12) OR jan,feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR sun,mon,tue,wed,thu,fri,sat
+# |  |  |  |  |
+# *  *  *  *  * user-name  command to be executed
+37 * * * * root run-parts /etc/cron.hourly
+23 5 * * * root run-parts /etc/cron.daily
+19 3 * * 0 root run-parts /etc/cron.weekly
+23 0 6 * * root run-parts /etc/cron.monthly
+```
+
+Example:
+
+```bash
+0 0 * * * root /sample_command >/dev/null 2>&1
+```
+</details>
+
 ## OTHERS
 
 <details>
