@@ -340,6 +340,25 @@ npm update
 </details>
 
 <details>
+            <summary>Upgrade GCC to 4.9.2</summary>
+* https://gist.github.com/craigminihan/b23c06afd9073ec32e0c
+            
+```bash
+sudo yum install libmpc-devel mpfr-devel gmp-devel
+
+cd ~/Downloads
+curl ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/releases/gcc-4.9.2/gcc-4.9.2.tar.bz2 -O
+tar xvfj gcc-4.9.2.tar.bz2
+
+cd gcc-4.9.2
+./configure --disable-multilib --enable-languages=c,c++
+make -j 4
+make install
+```
+
+<details>
+
+<details>
             <summary>Install GCC 7.3.0</summary>
 
 https://linuxhostsupport.com/blog/how-to-install-gcc-on-centos-7/
