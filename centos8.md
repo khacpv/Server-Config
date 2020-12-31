@@ -310,6 +310,55 @@ systemctl restart nginx
 
 </details>
 
+## MediaSoup V3
+
+<details>
+            <summary>Documents</summary>
+
+* [Instalation](https://mediasoup.org/documentation/v3/mediasoup/installation/)
+
+* [Demo V3](https://github.com/versatica/mediasoup-demo)
+
+</details>
+
+<details>
+            <summary>Install failed on Centos 7 & gcc 8.x</summary>
+
+https://mediasoup.discourse.group/t/centos-7-8-installation-error-please-upgrade-your-gcc/1512/6
+
+```bash
+Onetime installation:
+  sudo yum groupinstall "Development Tools"
+  sudo yum install centos-release-scl-rh
+  sudo yum install devtoolset-9-gcc
+When I rebuild mediasoup I run :
+
+source scl_source enable devtoolset-9 
+npm update
+```
+
+</details>
+
+<details>
+            <summary>Install GCC 7.3.0</summary>
+
+https://linuxhostsupport.com/blog/how-to-install-gcc-on-centos-7/
+
+```bash
+screen -U -S gcc
+wget http://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/releases/gcc-7.3.0/gcc-7.3.0.tar.gz
+tar zxf gcc-7.3.0.tar.gz
+cd gcc-7.3.0
+yum -y install bzip2
+./contrib/download_prerequisites
+./configure --disable-multilib --enable-languages=c,c++
+make -j 4
+make install
+gcc --version
+```
+
+</details>
+
 ## FIREWALLD
 <details>
             <summary>List Ports</summary>
