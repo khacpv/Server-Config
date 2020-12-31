@@ -356,7 +356,7 @@ make -j 4
 make install
 ```
 
-<details>
+</details>
 
 <details>
             <summary>Install GCC 7.3.0</summary>
