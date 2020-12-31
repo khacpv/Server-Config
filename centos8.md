@@ -378,6 +378,53 @@ gcc --version
 
 </details>
 
+<details>
+            <summary>Upgrade GCC to latest</summary>
+            
+https://bipulkkuri.medium.com/install-latest-gcc-on-centos-linux-release-7-6-a704a11d943d
+
+```bash
+sudo yum -y update
+sudo yum -y install bzip2 wget gcc gcc-c++ gmp-devel mpfr-devel libmpc-devel make
+gcc --version           # gcc4.8.5
+wget http://mirrors-usa.go-parts.com/gcc/releases/gcc-8.2.0/gcc-8.2.0.tar.gz   # change the link
+tar zxf gcc-8.2.0.tar.gz
+mkdir gcc-8.2.0-build
+cd gcc-8.2.0-build
+../gcc-8.2.0/configure --enable-languages=c,c++ --disable-multilib
+make -j$(nproc)
+sudo make install
+gcc --version           # gcc8.2.0
+```
+
+### /install.sh
+
+```bash
+#!/bin/sh
+GCC_VERSION=9.2.0       # change version
+sudo yum -y update
+sudo yum -y install bzip2 wget gcc gcc-c++ gmp-devel mpfr-devel libmpc-devel make
+gcc --version
+wget http://gnu.mirror.constant.com/gcc/gcc-$GCC_VERSION/gcc-$GCC_VERSION.tar.gz
+tar zxf gcc-$GCC_VERSION.tar.gz
+mkdir gcc-build
+cd gcc-build
+../gcc-$GCC_VERSION/configure --enable-languages=c,c++ --disable-multilib
+make -j$(nproc)
+sudo make install
+gcc --version
+cd ..
+rm -rf gcc-build
+```
+
+### update PATH
+
+```bash
+export PATH=/usr/local/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
+```
+</details>            
+
 ## FIREWALLD
 <details>
             <summary>List Ports</summary>
