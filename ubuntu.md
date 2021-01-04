@@ -10,6 +10,46 @@ sudo apt-get install git -y
 
 </details>
 
+
+## NODEJS
+<details>
+<summary>Install Nodejs</summary>
+            
+https://blog.csdn.net/cgs1999/article/details/89703649
+            
+```bash
+sudo apt-get update
+
+# Ubuntu 16.04
+# sudo apt-get install -y python-software-properties software-properties-common
+
+# Ubuntu 18.04
+sudo apt-get install -y software-properties-common
+
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+
+# Ubuntu 16.04
+#sudo apt-get install nodejs
+#sudo apt install nodejs-legacy
+#sudo apt install npm
+
+# Ubuntu 18.04
+sudo apt-get install nodejs
+sudo apt install libssl1.0-dev nodejs-dev node-gyp npm
+
+sudo npm config set registry https://registry.npm.taobao.org
+sudo npm config list
+
+sudo npm install n -g
+sudo n stable
+
+sudo node -v
+sudo npm -v
+```
+
+</details>
+
 ## OPEN PORTS
 <details>
 <summary>List All Open Ports</summary>
