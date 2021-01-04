@@ -23,6 +23,7 @@ sudo ufw app list
 sudo ufw allow 'Nginx Full'
 sudo ufw status
 systemctl status nginx
+sudo ufw enable
 ```
 
 </details>
