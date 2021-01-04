@@ -44,6 +44,16 @@ systemctl status nginx
 sudo ufw enable
 ```
 
+```bash
+sudo chown -R www-data:www-data ./
+
+# Directories 775
+sudo chmod 755 ../      
+
+# Files 644
+sudo chmod 644 ./*
+```
+
 </details>
 
 
