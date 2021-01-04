@@ -2,10 +2,28 @@
 
 ## GIT
 <details>
-<summary>Install GIT</summary>
+<summary>Install</summary>
             
 ```bash
 sudo apt-get install git -y
+```
+
+</details>
+
+## CERTBOT SSL
+<details>
+<summary>Install</summary>
+            
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04#step-5-setting-up-server-blocks-(recommended)
+
+https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-18-04
+            
+```bash
+sudo snap install core; sudo snap refresh core
+sudo snap install --classic certbot
+sudo ln -s /snap/bin/certbot /usr/bin/certbot
+sudo certbot --nginx
+sudo certbot certonly --nginx
 ```
 
 </details>
