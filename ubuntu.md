@@ -10,6 +10,23 @@ sudo apt-get install git -y
 
 </details>
 
+## NGINX
+<details>
+<summary>Install</summary>
+            
+https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-18-04
+            
+```bash
+sudo apt update
+sudo apt install nginx
+sudo ufw app list
+sudo ufw allow 'Nginx Full'
+sudo ufw status
+systemctl status nginx
+```
+
+</details>
+
 
 ## NODEJS
 <details>
