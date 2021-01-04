@@ -28,6 +28,49 @@ sudo certbot certonly --nginx
 
 </details>
 
+## SWAP
+<details>
+<summary>Install</summary>
+            
+https://www.digitalocean.com/community/tutorials/how-to-add-swap-space-on-ubuntu-18-04
+            
+```bash
+# find best size for swapfile
+sudo swapon --show
+free -h
+df -h
+
+# create swapfile
+sudo fallocate -l 1G /swapfile
+ls -lh /swapfile
+sudo chmod 600 /swapfile
+ls -lh /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo swapon --show
+
+# keep swapfile after reboot
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+
+# optimise swapfile
+cat /proc/sys/vm/swappiness
+sudo sysctl vm.swappiness=10
+
+cat /proc/sys/vm/vfs_cache_pressure
+sudo sysctl vm.vfs_cache_pressure=50
+```
+
+### /etc/sysctl.conf
+
+```bash
+# keep at reboot
+vm.swappiness=10
+vm.vfs_cache_pressure=50
+```
+
+</details>
+
 ## NGINX
 <details>
 <summary>Install</summary>
