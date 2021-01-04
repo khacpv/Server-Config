@@ -10,6 +10,33 @@ sudo apt-get install git -y
 
 </details>
 
+## OPEN PORTS
+<details>
+<summary>List All Open Ports</summary>
+            
+https://websiteforstudents.com/find-all-open-ports-listening-ports-on-ubuntu-18-04-16-04/
+            
+```bash
+sudo netstat -tnlp | grep :22
+```
+
+</details>
+
+<details>
+<summary>Open Ports</summary>
+            
+https://linuxconfig.org/how-to-open-allow-incoming-firewall-port-on-ubuntu-18-04-bionic-beaver-linux
+            
+```bash
+# Open incoming TCP port 10000 to any source IP address:
+sudo ufw allow from any to any port 10000 proto tcp
+
+# Open incoming TCP ports 20 and 21 from any source, such as when running FTP server:
+sudo ufw allow from any to any port 20,21 proto tcp
+```
+
+</details>
+
 ## MEDIASOUP
 
 <details>
