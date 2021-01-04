@@ -114,6 +114,13 @@ sudo chmod 755 ../
 sudo chmod 644 ./*
 ```
 
+### Port Already in used
+
+```bash
+sudo netstat -tulpn
+sudo kill [pid]
+```
+
 </details>
 
 
