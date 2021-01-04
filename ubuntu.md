@@ -10,6 +10,23 @@ sudo apt-get install git -y
 
 </details>
 
+## TIMEZONE
+<details>
+<summary>Set timezone</summary>
+            
+https://linuxize.com/post/how-to-set-or-change-timezone-on-ubuntu-18-04/
+            
+```bash
+timedatectl
+ls -l /etc/localtime
+cat /etc/timezone
+timedatectl list-timezones          # Asia/Ho_Chi_Minh
+sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+timedatectl
+```
+
+</details>
+
 ## CERTBOT SSL
 <details>
 <summary>Install</summary>
