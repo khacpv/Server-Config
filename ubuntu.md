@@ -47,7 +47,7 @@ sudo ufw enable
 ```bash
 sudo chown -R www-data:www-data ./
 
-# Directories 775
+# Directories 775 (for all parent levels)
 sudo chmod 755 ../      
 
 # Files 644
