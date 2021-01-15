@@ -598,7 +598,8 @@ certbot delete --cert-name Domain_Name
             <summary>renew only domain</summary>
 
 ```shell
-certbot --nginx certonly -n -d site.com
+certbot certificates                     # list all domains
+certbot renew --cert-name domain.com     # copy domain name from above
 ```
 
 </details>
