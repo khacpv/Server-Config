@@ -600,6 +600,7 @@ certbot delete --cert-name Domain_Name
 ```shell
 certbot certificates                     # list all domains
 certbot renew --cert-name domain.com     # copy domain name from above
+sudo systemctl reload nginx              # restart server to reload certificates
 ```
 
 </details>
