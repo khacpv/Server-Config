@@ -97,7 +97,7 @@ wget https://ftp.pcre.org/pub/pcre/pcre-8.42.zip
 unzip pcre-8.42.zip
 wget https://www.zlib.net/zlib-1.2.11.tar.gz
 tar -xzvf zlib-1.2.11.tar.gz
-wget https://www.openssl.org/source/openssl-1.1.0h.tar.gz
+wget https://www.open.org/source/openssl-1.1.0h.tar.gz
 tar -xzvf openssl-1.1.0h.tar.gz
 git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
 rm -f *.tar.gz *.zip
@@ -592,6 +592,15 @@ sudo certbot renew --dry-run
 certbot certificates    # show all Domain Name
 certbot delete --cert-name Domain_Name
 ```
+</details>
+
+<details>
+            <summary>renew only domain</summary>
+
+```shell
+certbot --nginx certonly -n -d site.com
+```
+
 </details>
 
 ## GIT
