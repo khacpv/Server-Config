@@ -708,6 +708,7 @@ sudo pm2 logs               #view logs for all processes
 sudo pm2 startup            #enable PM2 to start at system boot
 sudo pm2 startup systemd    #or explicitly specify systemd as startup system 
 sudo pm2 save               #save current process list on reboot
+sudo pm2 resurrect          #restore from 'pm2 save'
 sudo pm2 unstartup          #disable PM2 from starting at system boot
 sudo pm2 update	            #update PM2 package
 ```
