@@ -804,6 +804,21 @@ Ebook: http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
 </details>
 
 <details>
+            <summary>Remove MySQL logs</summary>
+
+```
+PURGE BINARY LOGS TO 'mysql-bin.000019';        # latest file
+
+# add /etc/my.cnf
+disable_log_bin 
+
+ALTER TABLE tablename ENGINE=InnoDB;            # recreate table with smaller size
+OPTIMIZE tablename
+```
+
+</details>
+
+<details>
             <summary>Forward Port & Tunning</summary>
 
 #### **`/etc/ssh/sshd_config`**
