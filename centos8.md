@@ -849,16 +849,43 @@ ssh -S my-socket-name -O exit root@hostname
 <details>
             <summary>Change database location</summary>
 
-### 1. Check location data directory:
+https://www.digitalocean.com/community/tutorials/how-to-change-a-mysql-data-directory-to-a-new-location-on-centos-7
 
 ```
-datadir=/var/lib/mysql  #in /etc/my.cnf
+# show current datadir
+mysql -u root -p
+mysql> select @@datadir;
+mysql> exit
+
+# stop mysqld
+sudo systemctl stop mysqld
+sudo systemctl status mysqld
+
+# 
+sudo rsync -av /var/lib/mysql /mnt/blockstorage/mysql8/oicshop    # no trailing slash at end
 ```
 
-### 2. Restart Mysql
+### /etc/my.cnf
 
 ```
-sudo systemctl restart mysql
+datadir=/mnt/blockstorage/mysql8/oicshop/mysql
+socket=/mnt/blockstorage/mysql8/oicshop/mysql/mysql.sock
+
+...
+
+[client]
+port=3306
+socket=/mnt/volume-nyc1-01/mysql/mysql.sock
+```
+
+### completed
+
+```
+sudo systemctl start mysqld
+sudo systemctl status mysqld
+
+mysql -u root -p
+select @@datadir;
 ```
 
 </details>
