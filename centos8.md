@@ -889,6 +889,8 @@ sudo du -sh /var/log/nginx/         # print folder size in GB or MB
 
 <details>
             <summary>Block Storage</summary>
+            
+https://www.vultr.com/docs/block-storage/
 
 ```
 lsblk    # see /dev/vdb storage
