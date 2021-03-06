@@ -846,6 +846,23 @@ ssh -S my-socket-name -O exit root@hostname
 
 </details>
 
+<details>
+            <summary>Change database location</summary>
+
+### 1. Check location data directory:
+
+```
+datadir=/var/lib/mysql  #in /etc/my.cnf
+```
+
+### 2. Restart Mysql
+
+```
+sudo systemctl restart mysql
+```
+
+</details>
+
 ## DISK-SPACE
 <details>
             <summary>list disk-spaces</summary>
@@ -868,6 +885,27 @@ sudo du -a / 2>/dev/null | sort -n -r | head -n 20  # find a biggest files in /
 ```bash
 sudo du -sh /var/log/nginx/         # print folder size in GB or MB
 ```
+</details>
+
+<details>
+            <summary>Block Storage</summary>
+
+```
+lsblk    # see /dev/vdb storage
+parted -s /dev/vdb mklabel gpt    # create new disk label
+parted -s /dev/vdb unit mib mkpart primary 0% 100%    # make primary partition
+mkfs.ext4 /dev/vdb1    # create EXT4 on primary partition
+mkdir /mnt/blockstorage   # make a mount point
+
+# mount first time
+echo >> /etc/fstab    # add a blank line
+echo /dev/vdb1 /mnt/blockstorage ext4 defaults,noatime,nofail 0 0 >> /etc/fstab    # auto mount on restart
+
+# or mount without reboot
+mount /mnt/blockstorage
+```
+
+          
 </details>
 
 ## SWAP
