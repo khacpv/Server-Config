@@ -78,6 +78,29 @@ sudo systemctl enable nginx
 ```
 </details>
 
+<details>
+<summary>Config folder</summary>
+        
+
+```bash
+sudo chown -R www-data:www-data ./
+
+# Directories 775 (for all parent levels)
+sudo chmod 755 ../      
+
+# Files 644
+sudo chmod 644 ./*
+```
+
+### Port Already in used
+
+```bash
+sudo netstat -tulpn
+sudo kill [pid]
+```
+
+</details>
+
 ## NGINX-RTMP-MODULE
 <details>
 <summary>https://www.howtoforge.com/tutorial/how-to-install-nginx-with-rtmp-module-on-centos/</summary>
