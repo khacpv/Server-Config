@@ -186,6 +186,9 @@ sudo ufw allow from any to any port 10000 proto tcp
 
 # Open incoming TCP ports 20 and 21 from any source, such as when running FTP server:
 sudo ufw allow from any to any port 20,21 proto tcp
+
+# add a range of ports
+sudo ufw allow 8000:10000/udp
 ```
 
 </details>
